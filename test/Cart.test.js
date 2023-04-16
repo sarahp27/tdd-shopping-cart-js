@@ -15,7 +15,7 @@ describe('Cart', () => {
 
     it('add item in Cart', () => {
         //Arrange
-        const = new Cart();
+        const cart = new Cart();
         const i = new Item ("Chips", 100, false);
         let qty = 1;
         //Act
