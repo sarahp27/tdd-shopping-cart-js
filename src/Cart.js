@@ -19,7 +19,6 @@ module.exports = class Cart {
     }
 
     addItem = (i, qty) => {
-        // this.itemList.quantity = quantity;
         this.itemList.push({...i,qty});
         this.totalPrice += this.itemList[0].price*qty;
 
@@ -34,18 +33,10 @@ module.exports = class Cart {
         return arr;
     };
 
+    itemizedList(itemList){
+        return itemList.map(
+             item => `${item.name} x${item.qty} - ${item.price * item.quantity}`
+         
+        );
 }
-
-// removeItem(i) {
-//     for (let item of this.itemList) {
-//         if (i.getItemName() === item.getItemName()) {
-//             if (item.getQuantity() > 1) {
-//                 item.decrementQuantity();
-//             } else {
-//                 this.itemList.splice(this.itemList.indexOf(item), 1);
-//             }
-//             return true;
-//         }
-//     }
-//     return false;
-// }
+}
