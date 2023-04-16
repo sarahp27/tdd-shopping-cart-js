@@ -24,6 +24,14 @@ module.exports = class Cart {
         return this.itemList;
     }
 
+    itemQuantities=(itemList ) => {
+        let arr = [];
+        for (let i of itemList){
+            arr.push(`${i.name} -x${i.qty}`);
+        }
+        return arr;
+    };
+
 }
 
 // removeItem(i) {

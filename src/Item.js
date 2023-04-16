@@ -6,13 +6,6 @@ module.exports = class Item {
     this.isOnSale = isOnSale;
   }
 
-  incrementQuantity() {
-    this.itemQuantity++;
-  }
-
-  decrementQuantity() {
-    this.itemQuantity--;
-  }
 
   getPrice() {
     return this.itemPrice;
