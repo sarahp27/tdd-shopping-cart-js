@@ -13,4 +13,18 @@ describe('Cart', () => {
         expect(get).toEqual(assert);
     })
 
+    it('add item in Cart', () => {
+        //Arrange
+        const = new Cart();
+        const i = new Item ("Chips", 100, false);
+        let qty = 1;
+        //Act
+        cart.addItem(i,qty);
+        let assert = i.price * qty;
+        let get = cart.totalPrice;
+        //Assert
+        expect(get).toEqual(assert);
+    })
+
+
 })
