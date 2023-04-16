@@ -6,7 +6,7 @@ describe('Cart', () => {
     it('Test Empty Cart', () => {
         //Arrange
         const cart = new Cart();
-        const assert ;
+        const assert = [] ;
         //Act
         let get = cart.getCart();
         //Assert
