@@ -26,4 +26,5 @@ module.exports = class Item {
   isOnSale() {
     return this.isOnSale;
   }
+
 }

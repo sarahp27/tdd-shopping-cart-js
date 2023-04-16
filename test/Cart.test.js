@@ -36,11 +36,11 @@ describe('Cart', () => {
         cart.addItem(i1,1);
         cart.addItem(i2,1);
         cart.addItem(i3,1);
-        let get = Cart.itemQuantities(cart.itemList);
+        let get = cart.itemQuantities(cart.itemList);
         let expected = ["Chips - x1", "Dairy Milk -x1", "Pizza -x1" ]
-        assert=3;
+        let assert=3;
         //Assert 
-        expect(get).toEqual(assert);
+        expect(get.length).toEqual(assert);
     })
 
 

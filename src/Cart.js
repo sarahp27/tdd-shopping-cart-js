@@ -1,3 +1,5 @@
+const Item = require("./Item");
+
 module.exports = class Cart {
     constructor() {
         this.itemList = [];
@@ -27,7 +29,7 @@ module.exports = class Cart {
     itemQuantities=(itemList ) => {
         let arr = [];
         for (let i of itemList){
-            arr.push(`${i.name} -x${i.qty}`);
+            arr.push(`${Item.name} -x${Item.qty}`);
         }
         return arr;
     };
