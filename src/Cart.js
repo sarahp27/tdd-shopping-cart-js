@@ -43,6 +43,9 @@ module.exports = class Cart {
         return items;
     }
     
-
+    ItemsonSale = () => {
+        let saleitems = this.itemList.filter(i=> i.isOnSale)
+        return saleitems;
+    }
 
 }
