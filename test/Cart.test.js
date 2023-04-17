@@ -64,4 +64,20 @@ describe('Cart', () => {
         let get = cart.itemizedList();
         expect(get).toBe(assert);
     })
+
+    //Test Case 5
+    it("Items on sale", () => {
+        //Arrange
+        let assert = [{"isOnSale": true, "itemName": "Dairy Milk", "itemPrice": 100, "qty": 1}];
+        const cart = new Cart();
+        const i1 = new Item ("Chips", 100, false);
+        const i2 = new Item ("Dairy Milk", 100, true);
+        //Act
+        cart.addItem(i1,1);
+        cart.addItem(i2,1);
+        //Assert
+        let get = cart.ItemsonSale();
+        expect(get).toStrictEqual(assert);
+
+    })
 })
