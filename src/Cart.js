@@ -19,9 +19,11 @@ module.exports = class Cart {
     }
 
     addItem = (i, qty) => {
-        this.itemList.push({...i,qty});
-        this.totalPrice += this.itemList[0].price*qty;
 
+        this.itemList.push({...i,qty});
+        for (let i = 0; i < this.itemList.length; i++){
+        this.totalPrice += this.itemList[i].itemPrice*qty;
+        }
         return this.itemList;
     }
 
@@ -33,10 +35,11 @@ module.exports = class Cart {
         return arr;
     };
 
-    itemizedList(itemList){
-        return itemList.map(
-             item => `${item.name} x${item.qty} - ${item.price * item.quantity}`
-         
-        );
+    itemizedList = () => {
+        let items = "";
+        this.itemList.forEach(i =>{
+            items += `${i.itemName}, ${i.itemPrice}, ${i.qty}`
+        })
+        return items;
 }
 }
