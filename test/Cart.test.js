@@ -4,7 +4,7 @@ const Item = require('../src/Item.js');
 
 describe('Cart', () => {
     
-    //test Case 1
+    //Test Case 1: Given that I visit the site, when I begin shopping, then I expect my cart to be empty.
     it('Test Empty Cart', () => {
         //Arrange
         const cart = new Cart();
@@ -15,7 +15,8 @@ describe('Cart', () => {
         expect(get).toEqual(assert);
     })
 
-    //Test Case 2
+    //Test Case 2 : Given I have an empty cart, when I add an Item, then I expect to see totalPrice 
+    //reflect the sum of all the Items in my cart, times the quantities of each item.
     it('Add item in Cart and see sum of all items', () => {
         //Arrange
         const cart = new Cart();
@@ -29,7 +30,8 @@ describe('Cart', () => {
         expect(get).toEqual(assert);
     })
 
-    //Test Case 3
+    //Test Case 3 : Given I have an empty cart, when I add more than one of an item, 
+    //then I expect itemQuantities() to show the number of items I have added.
     it('I add more than 1 item and expect quantities to show in numbers',() => {
         //Arrange
         const cart = new Cart();
@@ -46,7 +48,8 @@ describe('Cart', () => {
         expect(get.length).toEqual(assert);
     })
 
-    //Test Case 4
+    //Test Case 4 : Given I have an empty cart, when I add more than one of an item,
+    // then I expect itemQuantities() to show the number of items I have added.
     it("I add items, then I expect itemizedList() reflect the items I have added along with their price and quantity.", () => {
         //Arrange
         let assert = `Chips, 100, 1Dairy Milk, 100, 1Pizza, 500, 1`;
@@ -65,11 +68,12 @@ describe('Cart', () => {
         expect(get).toBe(assert);
     })
 
-    //Test Case 5
+    //Test Case 5 : Given I have an empty cart, when I add more than one of an item,
+    // then I expect totalPrice to reflect both the item price and quantity.
     it("Bill of total items", () => {
         //Arrange
         let assert = 1000;
-        const cart = Cart();
+        const cart = new Cart();
         const i1 = new Item ("Chips", 100, false);
         const i2 = new Item ("Dairy Milk", 100, true);
         const i3 = new Item ("Pizza", 500, false);
@@ -83,7 +87,8 @@ describe('Cart', () => {
         expect(get).toBe(assert);
     })
 
-    //Test Case 6
+    //Test Case 6 : Given I have a cart with items that are not on sale, when I add items that are on sale, 
+    //I expect onSaleItems() to include only the items on sale.
     it("Items on sale", () => {
         //Arrange
         let assert = [{"isOnSale": true, "itemName": "Dairy Milk", "itemPrice": 100, "qty": 1}];
