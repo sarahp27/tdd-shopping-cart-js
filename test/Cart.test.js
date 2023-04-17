@@ -66,6 +66,24 @@ describe('Cart', () => {
     })
 
     //Test Case 5
+    it("Bill of total items", () => {
+        //Arrange
+        let assert = 1000;
+        const cart = Cart();
+        const i1 = new Item ("Chips", 100, false);
+        const i2 = new Item ("Dairy Milk", 100, true);
+        const i3 = new Item ("Pizza", 500, false);
+        
+        //Act 
+        cart.addItem(i1,1);
+        cart.addItem(i2,1);
+        cart.addItem(i3,1);
+        //Assert
+        let get = cart.totalPrice;
+        expect(get).toBe(assert);
+    })
+
+    //Test Case 6
     it("Items on sale", () => {
         //Arrange
         let assert = [{"isOnSale": true, "itemName": "Dairy Milk", "itemPrice": 100, "qty": 1}];
